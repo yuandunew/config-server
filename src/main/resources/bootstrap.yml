@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+      discovery:
+        instance-Host: 127.0.0.1
+        instance-Port: ${server.port}
+
+      config:
+        enabled: true
+        root: configuration
+        defaultContext: apps
+        profileSeparator: '::'
