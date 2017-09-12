@@ -1,5 +1,6 @@
 server:
-  port: 8040
+  port: 8070
+
 spring:
   application:
     name: config-server
@@ -11,3 +12,11 @@ spring:
           search-paths: configs                                # git仓库地址下的相对地址，可以配置多个，用,分割。
           username: longyuanbing                                           # git仓库的账号
           password: lyb19860603                                             # git仓库的密码
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10                # 续约更新时间间隔（默认20秒）
+    leaseExpirationDurationInSeconds: 30             # 续约到期时间（默认60秒）
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8760/eureka/
+      healthcheck: true
