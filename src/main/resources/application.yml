@@ -13,10 +13,13 @@ spring:
           username: longyuanbing                                           # git仓库的账号
           password: lyb19860603                                             # git仓库的密码
 eureka:
+  user:
+    name: admin
+    password: admin123456
   instance:
     leaseRenewalIntervalInSeconds: 10                # 续约更新时间间隔（默认20秒）
     leaseExpirationDurationInSeconds: 30             # 续约到期时间（默认60秒）
   client:
     serviceUrl:
-      defaultZone: http://discovery:8760/eureka/
+      defaultZone: http://${eureka.user.name}:${eureka.user.password}@discovery:8760/eureka/
       healthcheck: true
